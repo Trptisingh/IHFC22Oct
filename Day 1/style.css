@@ -1,0 +1,17 @@
+        body {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .box1 {
+            background-color: #ffffe0;
+            border: 2px solid orange;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        #box2 {
+            background-color: #f466d3;
+            border: 2px solid rgb(138, 7, 158);
+            padding: 15px;
+            margin-top: 20px;
+        }

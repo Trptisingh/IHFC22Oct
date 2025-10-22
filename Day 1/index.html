@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        .form1 {
+            border: 2px solid green;
+            background-color: bisque;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Welcome to Day 1</h1>
+    <h2>This is the first Day of learning HTML</h2>
+    <h3>This is a subheading</h3>
+    <h4>This is a sub-subheading</h4>
+    <h5>This is a smaller heading</h5>
+    <h6>This is the smallest heading</h6>
+    <hr>
+    <h1>Paragraph Tag</h1>
+    <p>This is a paragraph of text under the smallest heading. 
+    HTML stands for HyperText Markup Language and is used to create web pages.
+    It consists of a series of elements or tags that define the structure and content of a web page.
+    These elements are represented by HTML tags, which are enclosed in angle brackets.
+    For example, a paragraph is defined using the p tag.
+    </p>
+    <hr>
+    <h1>Image Tag</h1>
+    <img src="Image1.jpg" alt="Image" width="500" height="333">
+    <hr>
+    <h1>Anchor Tag</h1>
+    <a href="https://www.google.com">This is a link to an external website</a>
+    <hr>
+    <h1>Br Tag</h1>
+    <p>This is a paragraph with a line break.<br>
+    This text is on a new line.</p>
+    <hr>
+    <h1>Horizontal Rule Tag</h1>
+    <p>The horizontal rule tag is used to create a thematic break in the content.</p>
+    <hr>
+    <h1>Div Tag</h1>
+    <div style="border:3px solid red; padding:10px;">
+        <p>This is a paragraph inside a div element.</p>
+    </div>
+    <hr>
+    <h1>Span Tag</h1>
+    <p>This is a paragraph with a <span style="color:blue;">blue span
+    <hr>
+    <h1>Semantic tags</h1>
+    <header>
+        <h1>Header Tag</h1>
+        <h2>This is the header section</h2>
+    </header>
+    <h1>Ordered List Tag</h1>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    <h1>Unordered List Tag</h1>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+    <footer>
+        <h1>Footer Tag</h1>
+        <h2>This is the footer section</h2> 
+    </footer>
+    <hr>
+    <h1>Simple HTML Form</h1>
+    <div class="form1">
+    <form action="https://httpbin.org/post" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message: </label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>   
+        <input type="submit" value="Submit">
+
+    </form>
+    </div>
+
+</body>
+</html>
