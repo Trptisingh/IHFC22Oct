@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Weather App</title>
+
+  <style>
+    /* ====== Basic Page Setup ====== */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #6dd5fa, #2980b9);
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ====== Weather Card ====== */
+    .weather-container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 320px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .weather-container:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    /* ====== Input & Button ====== */
+    input {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e6fa8;
+    }
+
+    /* ====== Weather Info ====== */
+    p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    span {
+      font-weight: bold;
+      color: #f9f871;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h2>🌤 Simple Weather App</h2>
+
+    <input type="text" id="city" placeholder="Enter city name">
+    <br>
+    <button id="getWeatherBtn">Get Weather</button>
+
+    <p><b>City:</b> <span id="cityName">-</span></p>
+    <p><b>Temperature (°C):</b> <span id="temperature">-</span></p>
+    <p><b>Weather:</b> <span id="weather">-</span></p>
+  </div>
+
+  <script>
+    // Select button
+    var button = document.getElementById("getWeatherBtn");
+
+    // Add click event
+    button.addEventListener("click", getWeather);
+
+    // Function to fetch and display weather
+    async function getWeather() {
+      var city = document.getElementById("city").value;
+      var apiKey = "8f95b1ea3615e9a884a6da019dd585ca";
+      var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+
+      try {
+        var response = await fetch(url);
+        var data = await response.json();
+
+        // Check if city is valid
+        if (data.cod !== 200) {
+          alert("City not found. Please try again.");
+          return;
+        }
+
+        // Convert temperature to Celsius
+        var tempC = (data.main.temp - 273.15).toFixed(2);
+
+        // Display results
+        document.getElementById("cityName").textContent = data.name;
+        document.getElementById("temperature").textContent = tempC;
+        document.getElementById("weather").textContent = data.weather[0].description;
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        alert("Something went wrong. Please try again later.");
+      }
+    }
+  </script>
+</body>
+</html>
+

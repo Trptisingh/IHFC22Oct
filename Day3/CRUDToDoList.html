@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Own To-Do List (CRUD API)</title>
+  <!-- <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> -->
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+input, button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧾 Your Own To-Do List</h2>
+
+    <input id="taskInput" placeholder="Enter a task">
+    <button id="addTaskBtn">Add Task</button>
+
+    <ul id="taskList"></ul>
+  </div>
+  <script>
+    const API_URL = "https://crudcrud.com/api/64293704d62b48d18af1c3360058e39b/todos"; // 👈 Replace this
+
+const taskInput = document.getElementById("taskInput");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const taskList = document.getElementById("taskList");
+
+// Fetch and display all tasks on page load
+window.addEventListener("DOMContentLoaded", getTasks);
+
+// Add new task
+addTaskBtn.addEventListener("click", () => {
+  const task = taskInput.value.trim();
+  if (task) {
+    const newTask = { text: task };
+    addTaskToAPI(newTask);
+    taskInput.value = "";
+  }
+});
+
+// Create task (POST)
+function addTaskToAPI(task) {
+  fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(task),
+  })
+  .then(response => response.json())
+  .then(data => addTaskToDOM(data))
+  .catch(error => console.error("Error adding task:", error));
+}
+
+// Read tasks (GET)
+function getTasks() {
+  fetch(API_URL)
+    .then(response => response.json())
+    .then(tasks => {
+      taskList.innerHTML = "";
+      tasks.forEach(addTaskToDOM);
+    })
+    .catch(error => console.error("Error fetching tasks:", error));
+}
+
+// Delete task (DELETE)
+function deleteTask(id, li) {
+  fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  })
+  .then(() => li.remove())
+  .catch(error => console.error("Error deleting task:", error));
+}
+
+// Display task in list
+function addTaskToDOM(task) {
+  const li = document.createElement("li");
+  li.textContent = task.text;
+
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "Delete";
+  delBtn.addEventListener("click", () => deleteTask(task._id, li));
+
+  li.appendChild(delBtn);
+  taskList.appendChild(li);
+}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector And Get Element by ID  Example</title>
+</head>
+<body>
+    <h1>Query Selector Example</h1>
+<h2 class="title">Hello Students!!</h2>
+    <script>
+       const heading = document.querySelector(".title");
+       heading.textContent = "Welcome to JavaScript!";
+       heading.style.color = "green";   
+       heading.style.fontSize = "24px";
+       heading.style.fontWeight = "bold";
+    </script>
+<h2 id="subtitle">Good Morning Everyone</h2>
+<script>
+    const message= document.getElementById("subtitle");
+    message.textContent = "Have a great day!";
+    message.style.color = "orange"; 
+    message.style.fontSize = "20px";
+    message.style.fontWeight = "bold";
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Object Example</title>
+</head>
+<body>
+    <h1 style="color: blue;"> Car Object Example </h1>
+    <p id="output" style="margin-top: 20px; font-weight: bold;"> Click the button below to see the car in action.</p>
+    <button id="drivebtn">Drive the Car</button>
+    <button id="brakebtn">Brake the Car</button>
+    
+    <script>
+        //creating the car object
+        const car={
+            color: "red",
+            brand: "Toyota",
+            year: 2020,
+            start: function() {
+                return "The car has started.";
+            },
+            drive: function() {
+                return "The car is now driving.";
+            },
+            brake: function() {
+                return "The car has stopped.";
+            }
+        }
+
+        // Adding event listeners to buttons
+        document.getElementById("drivebtn").addEventListener("click", function() {
+            document.getElementById("output").innerText = car.drive();
+        });
+
+        document.getElementById("brakebtn").addEventListener("click", function() {
+            document.getElementById("output").innerText = car.brake();
+        });
+    </script>
+</body>
+</html>
