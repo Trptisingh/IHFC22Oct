@@ -1,0 +1,151 @@
+ /* Beautiful Gradient Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /*Floating Bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .bubble:nth-child(1) { width: 150px; height: 150px; top: 10%; left: 15%; animation-delay: 0s; }
+    .bubble:nth-child(2) { width: 200px; height: 200px; bottom: 15%; right: 10%; animation-delay: 3s; }
+    .bubble:nth-child(3) { width: 100px; height: 100px; top: 70%; left: 30%; animation-delay: 6s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-25px); opacity: 1; }
+    }
+
+    /* Chat Box Container */
+    .chat-box {
+      position: relative;
+      z-index: 2;
+      width: 400px;
+      max-width: 90%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1s ease-in-out;
+      color: #fff;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /*Output Box */
+    #output {
+      min-height: 100px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 15px;
+      font-size: 1rem;
+      color: #f8f8f8;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      overflow-y: auto;
+      line-height: 1.5;
+    }
+
+    /* Input Row */
+    .input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Input Box */
+    #user-input {
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      outline: none;
+      color: #333;
+      background: rgba(255, 255, 255, 0.95);
+      transition: all 0.3s ease;
+    }
+
+    #user-input:focus {
+      background: #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    /* Send Button */
+    #fetch-btn {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      border: none;
+      color: white;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #fetch-btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #32f08e, #30f9c0);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scrollbar Styling */
+    #output::-webkit-scrollbar {
+      width: 6px;
+    }
+    #output::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
+    }
+    #output::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Subtle Glow Around Chat */
+    .chat-box::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(45deg, #00ffe0, #8f94fb, #6a11cb, #2575fc);
+      border-radius: 25px;
+      z-index: -1;
+      background-size: 300%;
+      animation: glow 6s linear infinite;
+      filter: blur(8px);
+    }
+
+    @keyframes glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
