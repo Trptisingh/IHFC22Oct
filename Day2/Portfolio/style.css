@@ -1,0 +1,133 @@
+        /* ---------- Basic Page Styling ---------- */
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background-color: #f5f9ff;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+
+        header, footer {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+
+        h2 {
+            color: #005b99;
+        }
+
+
+        section {
+            background-color: #ffffff;
+            margin: 15px;
+            padding: 15px;
+            border: 1px solid #cce0ff;
+            border-radius: 6px;
+        }
+
+
+        p, ul, blockquote {
+            line-height: 1.6;
+        }
+
+
+        ul {
+            padding-left: 20px;
+        }
+
+
+        li {
+            margin: 6px 0;
+        }
+
+
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-right: 15px;
+        }
+
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+
+        figcaption {
+            font-style: italic;
+            color: #555;
+        }
+
+
+        /* ---------- Buttons & Inputs ---------- */
+        input, textarea, button {
+            font-family: inherit;
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+        input[type="submit"] {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        input[type="submit"]:hover {
+            background-color: #005b99;
+        }
+
+
+        /* ---------- Details Tag ---------- */
+        details {
+            background-color: #eef6ff;
+            padding: 10px;
+            border: 1px solid #cce0ff;
+            border-radius: 5px;
+        }
+
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 600px) {
+            div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+
+            img {
+                margin: 0 0 10px 0;
+            }
+        }

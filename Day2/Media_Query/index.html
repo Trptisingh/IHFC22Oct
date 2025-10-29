@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Media Queries Example</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+      background-color: lightgray;
+    }
+
+    .box {
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .box1 { background-color: lightcoral; }
+    .box2 { background-color: lightseagreen; }
+    .box3 { background-color: royalblue; }
+
+    /* 📱 Mobile (max-width: 600px) */
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+        background-color: peachpuff;
+      }
+      .box {
+        height: 80px;
+      }
+    }
+
+    /* 💻 Tablet (601px to 992px) */
+    @media (min-width: 601px) and (max-width: 992px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        background-color: lightgoldenrodyellow;
+      }
+      .box {
+        height: 90px;
+      }
+    }
+
+    /* 🖥️ Desktop (993px and above) */
+    @media (min-width: 993px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        background-color: lightgray;
+      }
+      .box {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Media Queries — Responsive Layout Example</h2>
+  <div class="container">
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+  </div>
+</body>
+</html>
