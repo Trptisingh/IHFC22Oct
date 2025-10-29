@@ -1,0 +1,21 @@
+/* CSS Styling */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f4f4f4;
+}
+
+.driverSeat {
+  display: inline-block;
+  font-size: 18px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.driverSeat:hover {
+  transform: scale(1.1);
+}
