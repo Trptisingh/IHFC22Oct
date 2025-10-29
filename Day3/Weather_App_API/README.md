@@ -87,18 +87,6 @@ To convert it to **Celsius**:
 4. Type a city name and click **Get Weather**
 
 ---
-
-## 🧩 Tech Stack
-
-| Technology                                                                                  | Description                           |
-| ------------------------------------------------------------------------------------------- | ------------------------------------- |
-| ![HTML5](https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg)               | Structure of the webpage              |
-| ![CSS3](https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg)                  | Styling and layout (Glassmorphism UI) |
-| ![JavaScript](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)      | Fetching API and interactivity        |
-| ![OpenWeatherMap](https://upload.wikimedia.org/wikipedia/commons/4/4e/OpenWeather-Logo.jpg) | Real-time weather data provider       |
-
----
-
 ## 💡 Example Output
 
 **Input:**
@@ -116,3 +104,4 @@ Weather: clear sky
 
 ✨ **Result:**
 A simple, beautiful, and fully functional **Weather App** that helps you check live weather conditions instantly!
+
