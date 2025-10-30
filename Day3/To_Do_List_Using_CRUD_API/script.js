@@ -1,13 +1,13 @@
 // ---------------------------
 // 🔑 CrudCrud API URL
 // ---------------------------
-const API_URL = "https://crudcrud.com/api/b99fa5a35064455385babd2094db8959/todos";
+const API_URL = "https://crudcrud.com/api/6564e23f848e4dcdb663838e9b6d9685/todos";
 
 
 // ---------------------------
 // Get DOM elements
 // ---------------------------
-const output = document.getElementById("output");
+const output = document.getElementById("taskList");
 const addBtn = document.getElementById("addBtn");
 const taskInput = document.getElementById("taskInput");
 
