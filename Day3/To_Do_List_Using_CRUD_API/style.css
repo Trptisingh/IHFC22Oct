@@ -43,7 +43,7 @@ h2 {
 }
 
 h2::before {
-  content: "✅";
+  content: "";
   font-size: 1.3rem;
 }
 
@@ -202,3 +202,4 @@ button:hover {
     width: 100%;
   }
 }
+
